@@ -1,0 +1,675 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planificación Q4 2026 · Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#131315;--bg-soft:#1c1c20;--bg-card:#1a1a1f;--line:#2a2a30;--teal:#21dbaa;--violet:#8a5cf2;--ink:#f2f2f4;--muted:#9a9aa4;--faint:#65656f;--coral:#D94848;--amber:#C07800;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow:hidden;height:100vh;width:100vw;cursor:pointer;}
+  .grad-text{background:linear-gradient(115deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .deck-slide{width:100vw;height:100vh;display:none;align-items:center;justify-content:center;padding:2vh 5vw;position:relative;}
+  .deck-slide.deck-active{display:flex;}
+  .deck-body{width:100%;max-width:1620px;padding:0 1vw;}
+  .deck-eyebrow{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .deck-eyebrow-dot{width:9px;height:9px;border-radius:50%;background:var(--teal);flex-shrink:0;}
+  .deck-title{font-family:'Sora',sans-serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:8px;}
+  .deck-sub{font-size:clamp(1.02rem,1.3vw,1.18rem);color:var(--muted);line-height:1.42;max-width:1200px;margin-bottom:14px;}
+  .cover-body{text-align:center;padding:0 3vw;}
+  .cover-top-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8vh;}
+  .cover-eyebrow{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:12px;}
+  .cover-eyebrow-dot{width:10px;height:10px;border-radius:50%;background:var(--teal);}
+  .cover-right-meta{font-family:'Inter',sans-serif;font-size:.9rem;color:var(--faint);text-align:right;line-height:2.2;text-transform:uppercase;letter-spacing:.08em;}
+  .cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;max-width:95%;}
+  .cover-title{font-family:'Sora',sans-serif;font-size:clamp(3.6rem,6.2vw,5.8rem);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-bottom:28px;max-width:95%;}
+  .cover-title em{font-style:italic;color:var(--teal);}
+  .cover-subtitle{font-size:clamp(1.3rem,1.8vw,1.55rem);color:var(--muted);font-weight:400;line-height:1.6;max-width:780px;}
+  .cover-bottom-row{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;margin-top:8vh;}
+  .cover-bottom-txt{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;}
+  .resumen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:26px;}
+  .resumen-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:40px;text-align:center;}
+  .resumen-num{font-family:'Sora',sans-serif;font-size:clamp(3.7rem,5.1vw,5.1rem);font-weight:800;background:linear-gradient(115deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .resumen-label{font-size:1.2rem;color:var(--muted);margin-top:12px;font-weight:600;}
+  .context-box{background:rgba(138,92,242,.08);border:1px solid rgba(138,92,242,.3);border-radius:14px;padding:20px 26px;font-size:1.18rem;color:var(--muted);line-height:1.55;}
+  .context-box strong{font-weight:600;color:var(--ink);}
+  .ini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:18px;}
+  .ini-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:26px 28px;transition:border .2s;}
+  .ini-card:hover{border-color:var(--faint);}
+  .ini-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:16px;gap:10px;}
+  .ini-name{font-family:'Sora',sans-serif;font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1.22;flex:1;}
+  .ini-pills{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
+  .pill{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;padding:4px 11px;border-radius:7px;white-space:nowrap;letter-spacing:.02em;}
+  .pill-kr{background:rgba(33,219,170,.15);color:var(--teal);border:1px solid rgba(33,219,170,.4);}
+  .pill-bau{background:rgba(192,120,0,.15);color:var(--amber);border:1px solid rgba(192,120,0,.4);}
+  .pill-f1{background:var(--bg-card);color:#5eb8ff;border:1px solid rgba(94,184,255,.4);}
+  .pill-f2{background:var(--bg-card);color:var(--violet);border:1px solid rgba(138,92,242,.4);}
+  .pill-f3{background:var(--bg-card);color:var(--amber);border:1px solid rgba(192,120,0,.4);}
+  .pill-tma{background:var(--coral);color:#fff;border:1px solid var(--coral);font-weight:700;}
+  .ini-epicas{font-size:1.24rem;color:var(--muted);line-height:1.48;margin-bottom:14px;list-style:none;}
+  .ini-epicas li{padding:3px 0;display:flex;gap:9px;align-items:start;}
+  .ini-epicas li::before{content:"·";color:var(--teal);font-weight:700;flex-shrink:0;font-size:1.4rem;line-height:1.2;}
+  .ini-count{font-family:'Inter',sans-serif;font-size:1rem;color:var(--faint);letter-spacing:.04em;}
+  .ini-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+  .tag{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap;}
+  .ini-grid-dense{gap:10px;margin-bottom:10px;}
+  .ini-grid-dense .ini-card{border-radius:12px;padding:10px 13px;}
+  .ini-grid-dense .ini-header{margin-bottom:5px;gap:8px;}
+  .ini-grid-dense .ini-name{font-size:1rem;line-height:1.18;}
+  .ini-grid-dense .pill{font-size:.7rem;padding:2px 7px;border-radius:6px;}
+  .ini-grid-dense .ini-epicas{font-size:.82rem;line-height:1.3;margin-bottom:4px;}
+  .ini-grid-dense .ini-epicas li{padding:1px 0;gap:6px;}
+  .ini-grid-dense .ini-epicas li::before{font-size:1.05rem;line-height:1.1;}
+  .ini-grid-dense .ini-count{font-size:.7rem;}
+  .ini-grid-dense .ini-tags{margin-bottom:4px;gap:4px;}
+  .ini-grid-dense .tag{font-size:.62rem;padding:1px 7px;}
+  .ini-grid-mid{gap:16px;margin-bottom:10px;}
+  .ini-grid-mid .ini-card{border-radius:14px;padding:14px 18px;}
+  .ini-grid-mid .ini-header{margin-bottom:7px;gap:8px;}
+  .ini-grid-mid .ini-name{font-size:1.22rem;line-height:1.2;}
+  .ini-grid-mid .pill{font-size:.82rem;padding:3px 9px;border-radius:6px;}
+  .ini-grid-mid .ini-epicas{font-size:1rem;line-height:1.36;margin-bottom:8px;}
+  .ini-grid-mid .ini-epicas li{padding:2px 0;gap:7px;}
+  .ini-grid-mid .ini-epicas li::before{font-size:1.2rem;line-height:1.15;}
+  .ini-grid-mid .ini-count{font-size:.84rem;}
+  .ini-grid-mid .ini-tags{margin-bottom:6px;gap:5px;}
+  .ini-grid-mid .tag{font-size:.72rem;padding:2px 9px;}
+  .focos-layout{display:grid;grid-template-columns:1.55fr 1fr;gap:22px;align-items:stretch;}
+  .focos-left{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px 26px;display:flex;flex-direction:column;}
+  .focos-left-label{font-family:'Inter',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .foco-row{display:flex;gap:16px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line);}
+  .foco-row:first-of-type{border-top:none;}
+  .foco-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:rgba(33,219,170,.15);border:1px solid rgba(33,219,170,.4);color:var(--teal);font-family:'Sora',sans-serif;font-weight:800;font-size:.92rem;display:flex;align-items:center;justify-content:center;}
+  .foco-main{flex:0 0 33%;}
+  .foco-title{font-family:'Sora',sans-serif;font-size:1.08rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:3px;}
+  .foco-tags{font-size:.86rem;color:var(--teal);font-weight:600;}
+  .foco-detail{font-size:.94rem;color:var(--muted);line-height:1.42;flex:1;}
+  .focos-left-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.88rem;color:var(--faint);line-height:1.4;}
+  .focos-right{background:linear-gradient(165deg,rgba(33,219,170,.12),rgba(138,92,242,.08));border:1px solid rgba(33,219,170,.4);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .focos-right-label{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .focos-right-title{font-family:'Sora',sans-serif;font-size:clamp(1.9rem,3vw,2.5rem);font-weight:800;line-height:1.05;margin-bottom:10px;}
+  .focos-right-title em{font-style:normal;color:var(--teal);display:block;font-size:clamp(2.4rem,3.8vw,3.1rem);}
+  .focos-right-badge{font-family:'Inter',sans-serif;font-size:.86rem;font-weight:700;color:var(--violet);letter-spacing:.03em;margin-bottom:14px;}
+  .focos-right-note{font-size:.98rem;color:var(--muted);line-height:1.5;margin-bottom:18px;}
+  .focos-right-pill{background:var(--teal);color:#0a1512;font-family:'Inter',sans-serif;font-weight:700;font-size:.86rem;letter-spacing:.04em;text-transform:uppercase;padding:9px 20px;border-radius:8px;}
+  .kr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .kr-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:20px 24px;}
+  .kr-card.kr-top{border-color:rgba(33,219,170,.45);}
+  .kr-top-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;}
+  .kr-code{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;}
+  .kr-num{font-family:'Sora',sans-serif;font-size:2.8rem;font-weight:800;color:var(--ink);line-height:1;}
+  .kr-name{font-size:1.08rem;color:var(--muted);margin-bottom:10px;}
+  .kr-bar-track{width:100%;height:8px;border-radius:5px;background:var(--bg-card);overflow:hidden;margin-bottom:10px;}
+  .kr-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--teal),var(--violet));}
+  .kr-bloques{font-size:.94rem;color:var(--faint);line-height:1.38;}
+  .cross-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:1vh;}
+  .cross-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:30px 30px;text-align:center;}
+  .cross-card-label{font-family:'Inter',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .cross-card-title{font-family:'Sora',sans-serif;font-size:clamp(1.5rem,2.2vw,1.9rem);font-weight:800;color:var(--ink);margin-bottom:12px;}
+  .cross-card-note{font-size:1rem;color:var(--faint);line-height:1.48;}
+  .cross-card .ini-pills{display:flex;justify-content:center;gap:6px;margin-top:14px;}
+  .focos-placeholder-empty{font-family:'Sora',sans-serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:800;color:var(--faint);letter-spacing:-.02em;padding:10vh 0;text-align:center;}
+  .thanks-body{text-align:center;padding:0;}
+  .thanks-title{font-family:'Sora',sans-serif;font-size:clamp(4.4rem,7.4vw,6.6rem);font-weight:800;letter-spacing:-.04em;line-height:.95;color:var(--teal);margin-bottom:36px;}
+  .thanks-logo{margin-top:48px;opacity:.7;}
+  .thanks-logo svg{width:220px;height:auto;}
+  .nav{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:100;}
+  .nav button{background:var(--bg-card);border:1px solid var(--line);color:var(--muted);width:46px;height:46px;border-radius:9px;font-size:22px;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;}
+  .nav button:hover{border-color:var(--teal);color:var(--teal);}
+  .nav button:disabled{opacity:.25;cursor:not-allowed;}
+  .progress{position:fixed;bottom:30px;left:30px;font-size:.85rem;color:var(--faint);font-family:'Sora',sans-serif;font-weight:600;letter-spacing:.08em;z-index:100;}
+</style>
+</head>
+<body>
+
+<div class="deck-slide deck-active">
+  <div class="deck-body cover-body">
+    <div class="cover-top-row">
+      <div class="cover-eyebrow"><div class="cover-eyebrow-dot"></div>Flow · Planning Q4</div>
+      <div class="cover-right-meta">Octubre 2026<br>Q4 2026</div>
+    </div>
+    <div class="cover-mid">
+      <div class="cover-title">Planificación <em>Q4 2026</em></div>
+      <div class="cover-subtitle">Compromisos estratégicos del equipo Flow — alineados a los focos del H2</div>
+    </div>
+    <div class="cover-bottom-row">
+      <div class="cover-bottom-txt">Flow Prod Ops</div>
+      <div class="cover-bottom-txt">Interno · Confidencial</div>
+    </div>
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Resumen · Q4 2026</div>
+    <div class="deck-title">El portfolio completo</div>
+    <div class="deck-sub">Q4 cierra el H2 con foco en TMA, Perfiles y la base técnica para 2027.</div>
+    <div class="resumen-grid">
+      <div class="resumen-card"><div class="resumen-num">35</div><div class="resumen-label">Iniciativas</div></div>
+      <div class="resumen-card"><div class="resumen-num">76</div><div class="resumen-label">Épicas totales</div></div>
+      <div class="resumen-card"><div class="resumen-num">5</div><div class="resumen-label">KRs activos</div></div>
+    </div>
+    <div class="context-box"><strong>En esta presentación:</strong> 35 iniciativas (bloques de trabajo) que agrupan 76 épicas, organizadas por equipo y alineadas a los KRs del H2.</div>
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Focos Estratégicos · Q4 2026</div>
+    <div class="deck-title">Seguimos profundizando los focos correctos</div>
+    <div class="deck-sub">Avanzamos sobre la experiencia y mantenemos el rumbo, con TMA como la prioridad que habilita todo lo que sigue.</div>
+    <div class="focos-layout">
+      <div class="focos-left">
+        <div class="focos-left-label">Avanzamos en los mismos frentes estratégicos</div>
+        <div class="foco-row">
+          <div class="foco-num">01</div>
+          <div class="foco-main">
+            <div class="foco-title">Experiencia más personal</div>
+            <div class="foco-tags">Personalización · Mobile · Deportes</div>
+          </div>
+          <div class="foco-detail">Perfiles de Flow, Experiencia Deportes, Arquitectura Mobile — Hito 1, Evolución de Home (canales en vivo).</div>
+        </div>
+        <div class="foco-row">
+          <div class="foco-num">02</div>
+          <div class="foco-main">
+            <div class="foco-title">Experiencia sólida y escalable</div>
+            <div class="foco-tags">STV · Gestión de contenido · Señales</div>
+          </div>
+          <div class="foco-detail">Performance STV (Host y CyC), Robustecer Gestión del Contenido, Señales en la nube.</div>
+        </div>
+        <div class="foco-row">
+          <div class="foco-num">03</div>
+          <div class="foco-main">
+            <div class="foco-title">Bases para escalar</div>
+            <div class="foco-tags">Apagado M10 · Observabilidad · Métricas</div>
+          </div>
+          <div class="foco-detail">Migración a Minerva 11, Observabilidad y salud de decos.</div>
+        </div>
+        <div class="focos-left-foot">Seguimos sobre estos frentes, profundizando mejoras y haciendo explícitos los tradeoffs.</div>
+      </div>
+      <div class="focos-right">
+        <div class="focos-right-label">El foco que sube de escala</div>
+        <div class="focos-right-title">Migración<em>TMA</em></div>
+        <div class="focos-right-badge">Prioridad estratégica #1</div>
+        <div class="focos-right-note">En Q4 preparamos las bases para ejecutar la migración en 2027 sin perder clientes.</div>
+        <div class="focos-right-pill">Prioridad central</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Q4 · Compromisos por KR</div>
+    <div class="deck-title">Qué movemos en cada KR</div>
+    <div class="deck-sub">Cantidad de épicas que respaldan cada KR — el peso está donde más lo necesitamos: MTTR (2.3) y Stickiness (1.2) concentran más de la mitad del portfolio.</div>
+    <div class="kr-grid"><div class="kr-card">
+      <div class="kr-top-row"><div class="kr-code">KR 1.1</div><div class="kr-num">6</div></div>
+      <div class="kr-name">Parque</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:28%"></div></div>
+      <div class="kr-bloques">Migración TMA (Core, Dispositivos, OyO), Roku (Core)</div>
+    </div><div class="kr-card kr-top">
+      <div class="kr-top-row"><div class="kr-code">KR 1.2</div><div class="kr-num">21</div></div>
+      <div class="kr-name">Stickiness</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:100%"></div></div>
+      <div class="kr-bloques">Perfiles de Flow (todos los equipos), Experiencia Deportes, Canales en vivo, Flow en Martech, Experiencia Reproducción, Tendencias, Experiencia Música (Playback)</div>
+    </div><div class="kr-card">
+      <div class="kr-top-row"><div class="kr-code">KR 2.1</div><div class="kr-num">7</div></div>
+      <div class="kr-name">Detractores NPS</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:33%"></div></div>
+      <div class="kr-bloques">Mejorar Performance STVs (Host), Observabilidad y salud decos (Dispositivos), IPV6 (Core), Mejorar Performance STVs, Multicast ABR (Playback)</div>
+    </div><div class="kr-card">
+      <div class="kr-top-row"><div class="kr-code">KR 2.2</div><div class="kr-num">8</div></div>
+      <div class="kr-name">T2B CES</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:38%"></div></div>
+      <div class="kr-bloques">Nueva Arquitectura y Rediseño Flow, Experiencia Gestión de cuenta, Roku, Performance STV no Android</div>
+    </div><div class="kr-card kr-top">
+      <div class="kr-top-row"><div class="kr-code">KR 2.3</div><div class="kr-num">18</div></div>
+      <div class="kr-name">MTTR</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:85%"></div></div>
+      <div class="kr-bloques">BAU 20% Host, Mitigación de fallas (Core), Observabilidad y salud decos, Gestión del contenido VoD, Señales en la nube (Playback)</div>
+    </div><div class="kr-card">
+      <div class="kr-top-row"><div class="kr-code">KR BAU</div><div class="kr-num">16</div></div>
+      <div class="kr-name">Sin KR / Platform</div>
+      <div class="kr-bar-track"><div class="kr-bar-fill" style="width:76%"></div></div>
+      <div class="kr-bloques">Sin bloque/BAU 20% (Core), Migración a Minerva 11, Robustecer Gestión del Contenido, Gestión del contenido VoD, BAU (Playback)</div>
+    </div></div>
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Temas Cross-Equipo · Q4 2026</div>
+    <div class="deck-title">Antes de ir por equipo</div>
+    <div class="deck-sub">Dos temas atraviesan a varios equipos y merecen narrativa propia antes de la vista por equipo.</div>
+    <div class="cross-grid">
+      <div class="cross-card">
+        <div class="cross-card-label">Tema cross-equipo</div>
+        <div class="cross-card-title">Migración TMA</div>
+        <div class="cross-card-note">Aparece en Plataforma Core, Dispositivos y Oferta y Onboarding — es además la prioridad estratégica #1 del Q4 (ver foco anterior).</div>
+        <div style="display:flex;justify-content:center;margin-top:14px;"><div class="ini-tags"><div class="tag pill-tma">#TMA</div></div></div>
+      </div>
+      <div class="cross-card">
+        <div class="cross-card-label">Tema cross-equipo</div>
+        <div class="cross-card-title">Performance Smart TV</div>
+        <div class="cross-card-note">Aparece en Host y Catálogo y Contenido — parte del foco 02, Experiencia sólida y escalable.</div>
+        <div style="display:flex;justify-content:center;margin-top:14px;"><div class="ini-tags"><div class="tag pill-f2">#STV</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Host</div>
+    <div class="deck-title">Performance STV<br>y base técnica</div>
+    <div class="deck-sub">3 iniciativas — performance STV, automatización y deuda técnica cross-plataforma, observabilidad.</div>
+    <div class="ini-grid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Mejorar Performance en STVs</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Discovery LCP en dispositivos LOW — meta: reducir LCP ~30% (~6s)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#STV</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">BAU (20%)</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Automatización de releases — Android/ATV/iOS y Web/STV</li><li>Reducción de acoplamiento y deuda técnica — KMP, iOS→SPM, Web/STV→JFrog</li><li>Nuevos componentes de Design System</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Observabilidad y salud decos</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>CI/CD ATV — build variant de performance y memory leaks en hardware STB</li></ul>
+  <div class="ini-tags"><div class="tag pill-f3">#Observabilidad</div></div>
+  
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Plataforma Core · 1/2</div>
+    <div class="deck-title">TMA, Perfiles<br>y Estabilidad de plataforma</div>
+    <div class="deck-sub">5 de 9 iniciativas — migración TMA, BAU de plataforma, perfiles, gestión de cuenta, mitigación de fallas.</div>
+    <div class="ini-grid ini-grid-mid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Migración TMA</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Generación de marca de usuario activo (identificar inicio de uso Flow)</li><li>Preparación de bases para migrar usuarios en enero 2027</li></ul>
+  <div class="ini-tags"><div class="tag pill-tma">#TMA</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Sin bloque / BAU (20%)</div>
+    <div class="ini-pills"><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Canal 13 4K — mejora de calidad de imagen (Highest P0)</li><li>Homologación Origin Server, Puesta en prod 1.32, apagado de Open (High P1)</li><li>Mejoras de plataforma (arquitectura, DevOps, EKS), IPV6, normalización de ambientes y post-mundial</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Migración a Minerva 11</div>
+    <div class="ini-pills"><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Switch de la ingesta y apagado de la syncro</li><li>Apagado de servidores M10 al 100%</li></ul>
+  <div class="ini-tags"><div class="tag pill-f3">#M10</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Perfiles de Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Migración de usuarios — 2 olas (empleados + parque)</li><li>Nuevos desarrollos y mejora del proceso de recálculo</li><li>Perfil Kids — filtro por rating de contenido</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Perfiles</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Experiencia Gestión de cuenta</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Simultaneidad — simplificar gestión del error de reproducción</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  <div class="ini-count">Discovery</div>
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Plataforma Core · 2/2</div>
+    <div class="deck-title">M10, Contenido<br>y Roku</div>
+    <div class="deck-sub">4 de 9 iniciativas — apagado de M10, señales en la nube, gestión del contenido, Roku.</div>
+    <div class="ini-grid ini-grid-mid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Mitigación de fallas y reducción de tiempos</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Rate limit en la sesión</li><li>Rate limit en APIs del NOS</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Señales en la nube</div>
+    <div class="ini-pills"><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Disponibilizar funcionalidades avanzadas y grabaciones en la nube</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Señales</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Robustecer Gestión del Contenido</div>
+    <div class="ini-pills"><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Certificación CW11 — nuevas funcionalidades del proveedor + seguridad de CW</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Gestión de contenido</div></div>
+  <div class="ini-count">Low P3</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Roku</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Soporte a desarrollos de Roku para crecer el parque de dispositivos</li></ul>
+  
+  
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Dispositivos</div>
+    <div class="deck-title">TMA, Perfiles<br>y Observabilidad de decos</div>
+    <div class="deck-sub">5 iniciativas estratégicas — migración TMA, observabilidad, perfiles, Roku, homologación.</div>
+    <div class="ini-grid ini-grid-dense"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Migración TMA</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Homologar migración de decos TMA a Flow, por lotes y de forma controlada</li></ul>
+  <div class="ini-tags"><div class="tag pill-tma">#TMA</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Observabilidad y salud decos</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.1</div><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>TMS (Skyworth) — control masivo de decos</li><li>Mejorar tasa de diagnóstico ATV STB (hoy 53%)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f3">#Observabilidad</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Perfiles de Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Linux — Perfiles V1</li><li>Roku — Perfiles V1</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Perfiles</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Roku</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Experiencia de navegación V2 — alinear Home con Flow</li><li>Medir CES vía QR</li><li>Métricas de navegación en flujos críticos</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Homologación y actualización de dispositivos</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.1</div><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>¿Estás ahí? V2 — gestión de inactividad Sagemcom Full IP</li><li>Exploración actualización a Android 16 STB ATV</li><li>Métricas de Boot, EPG y Home Sagemcom Full IP</li></ul>
+  
+  
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Oferta y Onboarding</div>
+    <div class="deck-title">Perfiles, Onboarding<br>y Gestión de cuenta</div>
+    <div class="deck-sub">5 iniciativas estratégicas — perfiles, tour de onboarding, notificaciones y vinculación HBO.</div>
+    <div class="ini-grid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Perfiles de Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Nueva experiencia de creación y edición de perfiles</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Perfiles</div></div>
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Migración TMA</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Identificar clientes migrados y asegurar suscripciones sin fricciones</li></ul>
+  <div class="ini-tags"><div class="tag pill-tma">#TMA</div></div>
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Nueva Arquitectura y Rediseño Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Tour contextual para usuarios que ingresan por primera vez</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Personalización</div></div>
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Flow en Martech</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Centro de notificaciones — historial y preferencias personalizables</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Reminders</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Experiencia Gestión de cuenta</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Nueva vinculación con HBO Max (nuevo formato exigido por el proveedor)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Playback · 1/2</div>
+    <div class="deck-title">Performance STV<br>y Reproducción</div>
+    <div class="deck-sub">4 de 8 iniciativas — performance STV, reproducción mobile, contenido VoD, tendencias.</div>
+    <div class="ini-grid ini-grid-mid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Mejorar performance en STVs</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Experiencia percibida y criterios de diseño para STV no Android</li><li>Iniciativas de mejora de performance STV no Android (cross Flow: Catálogo, Host y Playback)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#STV</div></div>
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Experiencia Reproducción</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.1</div><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Mejora de casteo — equiparar CAST y sender/receiver</li><li>Evolución de controles del player Mobile — x2, bloqueo y zoom</li><li>Rediseño de Zapping en Mobile — player + EPG inline</li><li>Exploración de contenido vertical (PoC)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Mobile</div><div class="tag pill-f2">#Robustecimiento operación</div></div>
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Gestión del contenido VoD</div>
+    <div class="ini-pills"><div class="pill pill-bau">BAU</div><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>[MAM] — Mejoras de ingesta, mantenimiento y calidad de video VOD</li><li>[MAM] — Observabilidad de ingesta VOD en M11</li><li>[Transcoder] — Upgrade por obsolescencia y fin de soporte</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Gestión de contenido</div><div class="tag pill-f3">#Observabilidad</div></div>
+  <div class="ini-count">High P1</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Tendencias</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Tendencias en pantallas grandes (STV/Deco)</li><li>Personalización y exploración de contenidos — búsqueda semántica, tags, share social, backoffice editorial</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Personalización</div></div>
+  <div class="ini-count">High P1</div>
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Playback · 2/2</div>
+    <div class="deck-title">BAU, Música<br>y Señales en la nube</div>
+    <div class="deck-sub">4 de 8 iniciativas — BAU, experiencia música, multicast ABR, señales en la nube.</div>
+    <div class="ini-grid ini-grid-mid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">BAU</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.3</div><div class="pill pill-bau">BAU</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Homologación de nueva versión de OS en clusters ATEME naDVR</li><li>Upgrade CDN ATEME v5.17 — habilitador roadmap seguridad 2027</li></ul>
+  
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Experiencia Música</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Marcas en recitales de Música (POC)</li><li>[Multiview] — POC Multiview Dinámico para Lollapalooza</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Personalización</div></div>
+  <div class="ini-count">High P1</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Multicast ABR</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.1</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Homologación de Transcuster para habilitar compra y trial 2027</li></ul>
+  
+  <div class="ini-count">Highest P0</div>
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Señales en la nube</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.3</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Validación de capacidad de infraestructura para escalar señales</li><li>Unificación operativa de Señales, Tendencias y DR en AWS</li><li>POC Appear — nueva arquitectura de subida para mitigar errores y escalar</li><li>Validación de ARRIS y SAGEM para habilitar flujos Minerva en la nube</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#Señales</div></div>
+  <div class="ini-count">Highest P0</div>
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body">
+    <div class="deck-eyebrow"><div class="deck-eyebrow-dot"></div>Catálogo y Contenido</div>
+    <div class="deck-title">Nueva Arquitectura, Deportes<br>y Canales en vivo</div>
+    <div class="deck-sub">5 iniciativas estratégicas — arquitectura mobile, performance STV, deportes, canales en vivo, perfil Kids.</div>
+    <div class="ini-grid"><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Nueva Arquitectura y Rediseño Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Arquitectura Mobile — Hito 1</li><li>Nuevo DIP — pantallas grandes (evolutivo)</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Mobile</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Mejorar performance STV no Android</div>
+    <div class="ini-pills"><div class="pill pill-kr">2.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Guía de TV y navegación entre pages — continúa el track de Q3</li></ul>
+  <div class="ini-tags"><div class="tag pill-f2">#STV</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Experiencia Deportes</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>XP Deportes — equipo de interés (Web + Mobile)</li><li>Agenda deportiva V2</li><li>Flow en Google para eventos en vivo</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Deportes</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Evolución de Home — Canales en vivo</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Favoritos configurables + personalización por hábitos y contexto</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Personalización</div></div>
+  
+</div><div class="ini-card">
+  <div class="ini-header">
+    <div class="ini-name">Perfiles de Flow</div>
+    <div class="ini-pills"><div class="pill pill-kr">1.2</div></div>
+  </div>
+  <ul class="ini-epicas"><li>Perfil Kids — navegación y contenido adaptados por edad</li></ul>
+  <div class="ini-tags"><div class="tag pill-f1">#Perfiles</div></div>
+  <div class="ini-count">Highest P0</div>
+</div></div>
+    
+  </div>
+</div>
+
+<div class="deck-slide">
+  <div class="deck-body thanks-body">
+    <div class="thanks-title">Muchas gracias</div>
+    <div class="thanks-logo"><svg width="300" height="100" viewBox="0 0 300 100">
+<path d="M107.92,26.51c-12.98,0-23.49,10.58-23.49,23.49s10.58,23.49,23.49,23.49,23.49-10.58,23.49-23.49-10.51-23.49-23.49-23.49ZM107.92,64.18c-7.83,0-14.18-6.35-14.18-14.18s6.35-14.18,14.18-14.18,14.18,6.35,14.18,14.18-6.35,14.18-14.18,14.18Z" fill="#21dbaa"/>
+<polygon points="103.86 56.71 116.25 49.82 103.86 43.07 103.86 56.71" fill="#21dbaa"/>
+<path d="M141.26,37.87v3.21h-2.42v3.32h2.42v16.89h4.08v-16.89h4.42v-3.32h-4.42v-3.21c0-.72.34-1.06.94-1.06h4.46v-3.29h-4.99c-2.72,0-4.5,1.55-4.5,4.34Z" fill="#21dbaa"/>
+<path d="M157.84,56.64v-23.08h-4.12v23.31c0,2.98,1.21,4.42,3.48,4.42h4.12v-3.66h-2.72c-.6,0-.76-.23-.76-.98Z" fill="#21dbaa"/>
+<path d="M173.48,40.51c-5.82,0-9.86,4.42-9.86,10.65s3.93,10.65,9.71,10.65,9.78-4.68,9.78-10.69-3.82-10.62-9.63-10.62ZM173.37,58.27c-3.78,0-5.82-3.21-5.82-7.1s2.08-7.1,5.89-7.1,5.74,3.21,5.74,7.1-2.12,7.1-5.82,7.1Z" fill="#21dbaa"/>
+<polygon points="211.64 41.08 207.14 57.93 206.8 57.93 201.81 41.08 197.55 41.08 192.82 57.93 192.52 57.93 187.91 41.08 183.83 41.08 189.42 61.29 195.32 61.29 199.66 46.37 203.78 61.29 209.71 61.29 215.57 41.08 211.64 41.08" fill="#21dbaa"/>
+</svg></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button id="prev" onclick="prevSlide()">&#8249;</button>
+  <button id="next" onclick="nextSlide()">&#8250;</button>
+</div>
+<div class="progress" id="progress">1 / 14</div>
+
+<script>
+let cur=1;
+const slides=document.querySelectorAll('.deck-slide');
+const total=slides.length;
+function show(n){
+  if(n>total)n=total;if(n<1)n=1;cur=n;
+  slides.forEach(s=>s.classList.remove('deck-active'));
+  slides[cur-1].classList.add('deck-active');
+  document.getElementById('progress').textContent=cur+' / '+total;
+  document.getElementById('prev').disabled=cur===1;
+  document.getElementById('next').disabled=cur===total;
+}
+function nextSlide(){show(cur+1);}
+function prevSlide(){show(cur-1);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextSlide();}
+  if(e.key==='ArrowLeft'){e.preventDefault();prevSlide();}
+});
+document.addEventListener('click',e=>{
+  if(e.target.closest('.nav')) return;
+  const clickX = e.clientX;
+  const screenWidth = window.innerWidth;
+  if(clickX < screenWidth / 2){ prevSlide(); } else { nextSlide(); }
+});
+show(1);
+</script>
+</body>
+</html>
+</body></html>
